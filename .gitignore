@@ -1,0 +1,36 @@
+logs
+
+# Eclipse Setting
+/.metadata
+/Servers
+.settings
+RemoteSystemsTempFiles
+.project
+.classpath
+org.eclipse.jdt.core.prefs
+bin
+
+# Maven
+target
+
+# Netbeans Ignore
+nbproject
+build
+dist
+private
+
+# Maven ignore
+target
+
+# /com.artivisi.payment.ui.web/web/WEB-INF/templates/jrxml/
+/com.artivisi.payment.ui.web/web/WEB-INF/templates/jrxml/*.jasper
+/com.artivisi.payment.ui.web/web/js/dojotoolkit/ppob
+/com.artivisi.payment.ui.web/web/js/dojotoolkit/css
+
+
+# Dojo SDK
+/dojo-sdk
+
+#Gradle 
+.gradle
+
