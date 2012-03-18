@@ -13,7 +13,44 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
+  
+  <build>
+    <plugins>
+      <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-dependency-plugin</artifactId>
+         <executions>
+            <execution>
+               <id>copy-dependencies</id>
+               <phase>prepare-package</phase>
+               <goals>
+                  <goal>copy-dependencies</goal>
+               </goals>
+               <configuration>
+                  <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                  <overWriteReleases>true</overWriteReleases>
+                  <overWriteSnapshots>true</overWriteSnapshots>
+                  <overWriteIfNewer>true</overWriteIfNewer>
+               </configuration>
+            </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>${project.build.directory}/lib/</classpathPrefix>
+              <mainClass>belajar.jdbc.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -27,4 +64,5 @@
 		<version>5.1.18</version>
 	</dependency>
   </dependencies>
+  
 </project>
